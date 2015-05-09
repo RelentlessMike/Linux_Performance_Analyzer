@@ -1,1 +1,27 @@
 Run the LPA_host_agent.sh script from a cron job.
+
+Pull statistics for:
+Network
+CPU (overall and per process)
+Memory (overall and per process)
+Disk (overall and per process
+
+Tools:
+
+*Network*
+- ethtool with the statistics flag
+ethtool -S <device name>
+
+*Memory*
+top -b -n1 -o %MEM
+vmstat, free
+
+*CPU*
+- Batch mode top:
+top (top -b -n1)
+
+*Disk*
+- iostat (iostat - Report Central Processing Unit (CPU) statistics and input/output statistics for devices, partitions and network filesystems (NFS).)
+
+
+These statistics are dumped to temporary files which will be scpi'd ovr to the aggregator server (pulled by the aggregator server)
